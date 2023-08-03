@@ -33,8 +33,10 @@ spec:
           volumeMounts:
             - name: {{ .Values.volume.mount }}
               mountPath: {{ .Values.volume.path }} # this will mount the html.index file to it application location  
-          readinessProbe: {{- tpl (toYaml .Values.probes.readiness) . | nindent 12 }}   
-          livenessProbe: {{- tpl (toYaml .Values.probes.liveness) . | nindent 12 }}  
+          readinessProbe: 
+            {{- tpl (toYaml .Values.probes.readiness) . | nindent 12 }}   
+          livenessProbe: 
+            {{- tpl (toYaml .Values.probes.liveness) . | nindent 12 }}  
           env:
             - name: PORT
               value: {{ .Values.containers.containerPort | quote }}      
