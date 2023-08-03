@@ -6,6 +6,6 @@ containers:
   tag: 'chart_v1'
   env:
     - name: PORT
-      value: {{ .Values.containers.containerPort | quote }}
+      value: {{ .Values.containers.containerPort | 3000 }}
 service:
   servicePort: 8080
