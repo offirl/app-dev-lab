@@ -25,5 +25,5 @@ probes:
     failureThreshold: 3  
 
 volume:
-  - mount: index-html
-    path: /tmp/html # this will mount the html.index file to it application location
+  mount: index-html
+  path: /tmp/html # this will mount the html.index file to it application location
